@@ -14,7 +14,7 @@ const WavelInterp = require('./interpolater');
     await test_data.loadFromCsv()
 
     // next would be to interpolate the wavelengths
-    const wavels_new = WavelInterp(test_data, component_data);
+    const wavels_new = new WavelInterp(test_data, component_data);
 
     // finally would be to perform the least squares regression (either unconstrained or nonnegative )
 
