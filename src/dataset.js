@@ -1,5 +1,3 @@
-const path = require('path');
-
 // src/dataset.js
 const fs = require('fs').promises
 

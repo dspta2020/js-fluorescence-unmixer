@@ -1,4 +1,5 @@
 const Dataset = require('./dataset');
+const WavelInterp = require('./interpolater');
 
 (async () => {
 
@@ -12,16 +13,11 @@ const Dataset = require('./dataset');
     await component_data.loadFromCsv()
     await test_data.loadFromCsv()
 
-    // check some attributes of the data
-    // console.log(dataset.wavel_max, dataset.wavel_min, dataset.headers, dataset.data.map(row => row[1])
-    // const columnValues = dataset.data.map(row => row[1]);
-    // console.log(dataset.headers[1])
+    // next would be to interpolate the wavelengths
+    const wavels_new = WavelInterp(test_data, component_data);
 
-    // let dye_vector = test_data.getDyeVector(1)
-    // console.log(dye_vector.dye_name, dye_vector.dye_data)
+    // finally would be to perform the least squares regression (either unconstrained or nonnegative )
 
-    // dye_vector = test_data.getDyeVector(153)
-    // console.log(dye_vector.dye_name, dye_vector.dye_data)
 
     console.log('Finished loading data.')
 })();
